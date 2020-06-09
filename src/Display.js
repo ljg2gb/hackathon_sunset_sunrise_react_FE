@@ -26,6 +26,7 @@ export default class Display extends Component {
 
 
     showPosition = (position) => {
+        console.log(position)
         this.setState({
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
@@ -48,7 +49,6 @@ export default class Display extends Component {
         if (this.state.latitude) {
             fetch(`https://api.sunrise-sunset.org/json?lat=${this.state.latitude}&lng=${this.state.longitude}`)
             .then((response) => response.json())
-            // .then(console.log)
             .then((res) =>
             this.setState({
                 sunrise: res.results.sunrise,
