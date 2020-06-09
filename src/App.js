@@ -7,7 +7,7 @@ import './App.css';
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="app">
       <h1>Sunrise-Sunset</h1>
       {/* <Login /> */}
       <Display />
