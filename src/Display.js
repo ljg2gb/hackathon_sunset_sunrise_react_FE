@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SunCards from './SunCards.js'
 
 const BE = 'http://localhost:3000/photos'
 
@@ -8,7 +9,9 @@ export default class Display extends Component {
         latitude: '',
         longitude: '',
         sunrise: '',
-        sunset: ''
+        sunrise_image: '',
+        sunset: '',
+        sunset_image: ''
     };
 
     getLocation = () => {
@@ -29,33 +32,37 @@ export default class Display extends Component {
         })
 
     }
-
+    
     componentDidMount() {
         this.getLocation()
         fetch(BE)
             .then(response => response.json())
-            .then()
+            // .then(result => console.log(result[5]["url"]))
+            .then(result => this.setState({
+                sunrise_image: result[4]["url"],
+                sunset_image: result[5]["url"]
+            }))
     }
     
     componentDidUpdate() {
         if (this.state.latitude) {
-        fetch(`https://api.sunrise-sunset.org/json?lat=${this.state.latitude}&lng=${this.state.longitude}`)
+            fetch(`https://api.sunrise-sunset.org/json?lat=${this.state.latitude}&lng=${this.state.longitude}`)
             .then((response) => response.json())
             // .then(console.log)
             .then((res) =>
-                this.setState({
-                    sunrise: res.results.sunrise,
-                    sunset: res.results.sunset
-                }))
+            this.setState({
+                sunrise: res.results.sunrise,
+                sunset: res.results.sunset
+            }))
         }
+        
     }
 
     render() {
         return (
             <div className="saved">
                 <h2>In Fort Collins today</h2>
-                <h3>Sunrise is at {this.state.sunrise}</h3>
-                <h3>Sunset is at {this.state.sunset}</h3>
+                <SunCards sunrise={this.state.sunrise} sunrise_image={this.state.sunrise_image} sunset={this.state.sunset} sunset_image={this.state.sunset_image}/>
             </div>
         );
     }
