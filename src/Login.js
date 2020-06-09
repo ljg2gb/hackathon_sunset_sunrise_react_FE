@@ -25,7 +25,6 @@ export default class Login extends Component {
         fetch('http://localhost:3000/users', requestOptions)
             .then(response => response.json())
             .then(result => this.handleLogin(result))
-            // .then(console.log)
 
     }
 

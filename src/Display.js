@@ -38,7 +38,6 @@ export default class Display extends Component {
         this.getLocation()
         fetch(BE)
             .then(response => response.json())
-            // .then(result => console.log(result[5]["url"]))
             .then(result => this.setState({
                 sunrise_image: result[4]["url"],
                 sunset_image: result[5]["url"]

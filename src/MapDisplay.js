@@ -2,13 +2,6 @@
 import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
-
-// type State = {
-//   lat: number,
-//   lng: number,
-//   zoom: number,
-// }
-
 export default class MapDisplay extends Component{
   state = {
     lat: 51.505,

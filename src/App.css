@@ -1,13 +1,12 @@
 @import url(https://fonts.googleapis.com/css2?family=Merienda&family=Roboto&display=swap);
 
-
 .app {
   font-family: Roboto, sans-serif;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-body{
+body {
   background-size: cover;
   background-image: url('https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/195ac4c4bd2345669c6fbd0f1d186c09')
 
@@ -19,9 +18,11 @@ h1 {
   font-size: 40px;
   width: 100%;
 }
+
 h2 {
   text-align: center;
 }
+
 h3 {
   display: inline-block;
 }
@@ -30,13 +31,9 @@ h3 {
   padding: 200px;
   background-color: rgba(255, 255, 255, 0.329);
   border-radius: 10px;
-
-  /* height: 500px;
-  width: 100%; */
-  /* background-size: cover; */
-  /* background-image: url('https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/195ac4c4bd2345669c6fbd0f1d186c09') */
 }
-input{
+
+input {
   border-style: none;
   padding: 4px;
 
@@ -56,6 +53,7 @@ input{
   justify-content: space-around;
   background-color: white;
 }
+
 .sun-cards > img {
   width: 45%;
   margin: 1rem;
